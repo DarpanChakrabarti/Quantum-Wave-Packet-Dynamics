@@ -81,7 +81,7 @@ plt.show()
 sigma_theory = []
 sigma_theory.append(sigma0*(1+(times/(2*sigma0**2)))**0.5)
 
-plt.figure(figsize=(7, 4)) # --- Plot σ(t) after animation ---
+plt.figure(figsize=(7, 4)) # --- Plot sigma(t) after animation ---
 plt.plot(times[:len(sigmas)], sigmas, color='green', label='$\\sigma$(t)')
 plt.xlabel("Time (t)")
 plt.ylabel("Wave Packet Width $\\sigma$(t)")
