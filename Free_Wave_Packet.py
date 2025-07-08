@@ -4,23 +4,22 @@ import matplotlib.animation as animation
 
 hbar = 1.0 # --- Physical Constants (natural units) ---
 m = 1.0
-
 N = 1024 # --- Simulation Domain ---
-L = 200.0
+L = 400.0
 dx = L / N
-x = np.linspace(-L / 2, L / 2, N)
+L_view = L/2
+x = np.linspace(-L_view / 2, L_view / 2, N)
 
-x_left = -L/2 # --- Viewport Control ---
-x_right = L/2
+x_left = -L_view/2 # --- Viewport Control ---
+x_right = L_view/2
 
 dt = 0.1 # --- Time Parameters ---
-steps = int((L/2)*(1/dt)) # Calculating the number of steps to-
+steps = int((L)*(1/dt)) # Calculating the number of steps to-
 times = np.arange(0, steps * dt, dt)        # cover the whole animation
 sigmas = []
 
 k = np.fft.fftfreq(N, d=dx) * 2 * np.pi # --- Momentum grid for FFT ---
-
-x0 = -(L/2)+20 # --- Initial Wave Packet ---
+x0 = -(L_view/2)+20 # --- Initial Wave Packet ---
 sigma0 = 5.0
 k0 = 1.0
 
@@ -76,7 +75,7 @@ def update(frame): # --- Animation Update Function ---
 
 # --- Animation ---
 ani = animation.FuncAnimation(
-    fig, update, frames=steps, init_func=init, interval=10, blit=True) 
+    fig, update, frames=steps, init_func=init, interval=1, blit=True) 
 plt.show()
 sigma_theory = []
 sigma_theory.append(sigma0*(1+(times/(2*sigma0**2)))**0.5)
