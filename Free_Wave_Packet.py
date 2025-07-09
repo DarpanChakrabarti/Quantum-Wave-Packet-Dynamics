@@ -19,15 +19,14 @@ x0 = -80.0 #  Initial Wave Packet
 sigma = 5.0
 k0 = 1.0
 
-norm = (1 / (2 * np.pi * sigma**2))**0.25
-psi = norm * np.exp(-(x - x0)**2 / (2 * sigma**2)) * np.exp(1j * k0 * x)
-psi /= np.sqrt(np.sum(np.abs(psi)**2) * dx)
+psi = np.exp(-(x - x0)**2 / (2 * sigma**2)) * np.exp(1j * k0 * x)
+psi /= np.sqrt(np.sum(np.abs(psi)**2) * dx) # normalization
 
 T_k = np.exp(-1j * (hbar * k)**2 / (2 * m) * dt / hbar) # Time Evolution Operator 
 
-fig, ax=plt.subplots() # Set Up Plot
-line_re,=ax.plot(x, np.real(psi), color='blue', label='Re($\\psi$)', linestyle='--')
-line_prob,=ax.plot(x, np.abs(psi)**2, color='red', label='$|\\psi|^2$', linestyle='-')
+fig, ax = plt.subplots() # Set Up Plot
+line_re, = ax.plot(x, np.real(psi), color='blue', label='Re($\\psi$)', linestyle='--')
+line_prob, = ax.plot(x, np.abs(psi)**2, color='red', label='$|\\psi|^2$', linestyle='-')
 time_text = ax.text(0.37, 0.2, '', transform=ax.transAxes, fontsize=12, color='Red')
 
 ax.set_xlim(x_left, x_right)
@@ -53,17 +52,17 @@ def update(frame): # Update Function
     psi_k = np.fft.fft(psi)    # Time evolution
     psi_k *= T_k
     psi = np.fft.ifft(psi_k)
-    psi /= np.sqrt(np.sum(np.abs(psi)**2) * dx)
-    
+
     prob_density = np.abs(psi)**2     # Calculate sigma(t)
     x_mean = np.sum(x * prob_density) * dx
     x2_mean = np.sum(x**2 * prob_density) * dx
     sigma_t = np.sqrt(x2_mean - x_mean**2)
-
+    
     if frame < steps:
         sigmas.append(sigma_t)
         times.append(t)
-    if t == 100: # pauses the animation at any designated time
+
+    if t == 100:            # Ending the animation at designated time
         ani.event_source.stop()
         
     line_re.set_ydata(np.real(psi))    # Update plot
