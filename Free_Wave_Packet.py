@@ -63,6 +63,8 @@ def update(frame): # Update Function
     if frame < steps:
         sigmas.append(sigma_t)
         times.append(t)
+    if t == 100: # pauses the animation at any designated time
+        ani.event_source.stop()
         
     line_re.set_ydata(np.real(psi))    # Update plot
     line_prob.set_ydata(prob_density)
