@@ -24,9 +24,9 @@ psi /= np.sqrt(np.sum(np.abs(psi)**2) * dx) # normalization
 
 T_k = np.exp(-1j * (hbar * k)**2 / (2 * m) * dt / hbar) # Time Evolution Operator 
 
-fig, ax = plt.subplots() # Set Up Plot
-line_re, = ax.plot(x, np.real(psi), color='blue', label='Re($\\psi$)', linestyle='--')
-line_prob, = ax.plot(x, np.abs(psi)**2, color='red', label='$|\\psi|^2$', linestyle='-')
+fig, ax=plt.subplots() # Set Up Plot
+line_re,=ax.plot(x, np.real(psi), color='blue', label='Re($\\psi$)', linestyle='--')
+line_prob,=ax.plot(x, np.abs(psi)**2, color='red', label='$|\\psi|^2$', linestyle='-')
 time_text = ax.text(0.37, 0.2, '', transform=ax.transAxes, fontsize=12, color='Red')
 
 ax.set_xlim(x_left, x_right)
@@ -61,7 +61,6 @@ def update(frame): # Update Function
     if frame < steps: # Prevents appending beyond final frame (safety check)
         sigmas.append(sigma_t)
         times.append(t)
-
     if t == 100:            # Ending the animation at designated time
         ani.event_source.stop()
         
@@ -72,8 +71,8 @@ def update(frame): # Update Function
 
 # Run Animation
 ani = animation.FuncAnimation(
-    fig, update, frames=steps, init_func=init, interval=10, blit=True)
-
+    fig, update, frames=steps, init_func=init, interval=10, blit=True) 
+# Smaller interval makes the animation faster
 plt.show()
 
 plt.figure(figsize=(7, 4)) # Plot sigma(t) vs Time
