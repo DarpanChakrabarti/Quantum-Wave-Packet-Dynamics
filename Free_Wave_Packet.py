@@ -58,7 +58,7 @@ def update(frame): # Update Function
     x2_mean = np.sum(x**2 * prob_density) * dx
     sigma_t = np.sqrt(x2_mean - x_mean**2)
     
-    if frame < steps:
+    if frame < steps: # Prevents appending beyond final frame (safety check)
         sigmas.append(sigma_t)
         times.append(t)
 
