@@ -53,8 +53,8 @@ def update(frame): # Update Function
     psi_k = np.fft.fft(psi)    # Time evolution
     psi_k *= T_k
     psi = np.fft.ifft(psi_k)
-
     psi /= np.sqrt(np.sum(np.abs(psi)**2) * dx)
+    
     prob_density = np.abs(psi)**2     # Calculate sigma(t)
     x_mean = np.sum(x * prob_density) * dx
     x2_mean = np.sum(x**2 * prob_density) * dx
