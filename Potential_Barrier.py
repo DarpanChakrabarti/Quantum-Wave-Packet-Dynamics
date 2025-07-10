@@ -70,7 +70,7 @@ def update(frame):
     psi *= V_x_half # V/2 operator
     prob_density = np.abs(psi)**2     # Compute prob density
 
-    if t == 200: # Pause at designated time
+    if t == 120: # Pause at designated time
         ani.event_source.stop()
 
     line_re.set_ydata(np.real(psi))
