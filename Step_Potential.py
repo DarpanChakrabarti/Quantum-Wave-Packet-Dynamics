@@ -42,7 +42,7 @@ x_left, x_right = -100, 100 # Viewport
 ax.set_xlim(x_left, x_right)
 ax.set_ylim(-0.5, 0.5)
 ax.set_xlabel("x")
-ax.set_ylabel("Amplitude")
+ax.set_ylabel("$Re(\\psi)$ / Probability Density")
 ax.set_title("Gaussian Wave Packet Scattering off a Step Potential")
 ax.grid(True)
 ax.legend()
