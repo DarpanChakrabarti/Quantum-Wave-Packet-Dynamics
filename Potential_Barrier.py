@@ -5,8 +5,8 @@ import matplotlib.animation as animation
 # --- Constants ---
 hbar = 1.0
 m = 1.0
-N = 1024
-L = 500.0
+N = 4096 # Simulation domain
+L = 2000.0
 dx = L / N
 x = np.linspace(-L / 2, L / 2, N)
 dt = 0.1
