@@ -99,7 +99,8 @@ mask_right = x > x_barrier_right
 
 R = np.sum(final_prob_density[mask_left]) * dx  
 T = np.sum(final_prob_density[mask_right]) * dx
+B = 1 - R + T # probability density that remains inside the barrier
 
 print(f"Reflection coefficient R = {R:.4f}")
 print(f"Transmission coefficient T = {T:.4f}")
-print(f"R + T = {R + T:.4f}")
+print(f"R + T = {R + T + B:.4f}")
