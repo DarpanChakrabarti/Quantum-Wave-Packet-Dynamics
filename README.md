@@ -16,11 +16,11 @@ Simulation of a one-dimensional quantum wave packet using the Split-Operator Fou
 ## 🚀 Getting Started
 
 ## 📷 Features
--📦 Simulates 1D quantum wave packet evolution using the split-operator Fourier method.
--🌀 Visualizes tunneling, reflection, and dispersion in real-time with animation.
--🧮 Calculates reflection (R) and transmission (T) coefficients numerically.
--🧠 Includes resonance analysis in double-barrier potentials.
--🔓 Fully open-source and beginner-friendly with modular Python code.
+- 📦 Simulates 1D quantum wave packet evolution using the split-operator Fourier method.
+- 🌀 Visualizes tunneling, reflection, and dispersion in real-time with animation.
+- 🧮 Calculates reflection (R) and transmission (T) coefficients numerically.
+- 🧠 Includes resonance analysis in double-barrier potentials.
+- 🔓 Fully open-source and beginner-friendly with modular Python code.
 
 ---
 ## ▶️ Getting Started
