@@ -10,13 +10,13 @@ x = np.linspace(-L / 2, L / 2, N)
 dt = 0.1
 steps = 3000
 
-V0 = 0.5 #  Double Barrier potential 
+V0 = 0.3 #  Double Barrier potential 
 a = 60   # inner half-width
 b = 80   # outer half-width
 V = np.zeros_like(x)
 V[(np.abs(x) >= a) & (np.abs(x) <= b)] = V0
 
-E_vals = np.linspace(0.1, 65.0, 200) # Energy Sweep Range (0.1 to 65)
+E_vals = np.linspace(0, 65.0, 1000) # Energy Sweep Range (0 to 65)
 transmissions = []
 
 for E in E_vals: # Main loop over different Energy values
