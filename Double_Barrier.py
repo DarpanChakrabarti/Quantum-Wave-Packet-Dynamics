@@ -73,7 +73,7 @@ def update(frame):
 
     if t == 350: # Pause at designated time
         ani.event_source.stop()
-
+        
     line_re.set_ydata(np.real(psi))
     line_prob.set_ydata(prob_density)
     time_text.set_text(f'Time(t) = {t:.0f}s')
