@@ -6,7 +6,7 @@ import matplotlib.animation as animation
 hbar = 1.0
 m = 1.0
 N = 1024
-L = 1000.0
+L = 500.0
 dx = L / N
 x = np.linspace(-L / 2, L / 2, N)
 dt = 0.1
