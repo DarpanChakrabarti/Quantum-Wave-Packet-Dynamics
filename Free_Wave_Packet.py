@@ -32,7 +32,7 @@ time_text = ax.text(0.37, 0.2, '', transform=ax.transAxes, fontsize=12, color='R
 ax.set_xlim(x_left, x_right)
 ax.set_ylim(-0.5, 0.5)
 ax.set_xlabel("x")
-ax.set_ylabel("Amplitude")
+ax.set_ylabel("$Re(\\psi)$ / Probability Density")
 ax.set_title("Free Gaussian Wave Packet")
 ax.grid(True)
 ax.legend()
