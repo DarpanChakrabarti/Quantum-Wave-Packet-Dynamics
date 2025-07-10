@@ -44,7 +44,7 @@ ax.set_xlim(x_left, x_right)
 ax.set_ylim(-0.5, 0.5)
 ax.set_xlabel("x")
 ax.set_ylabel("Amplitude")
-ax.set_title("Gaussian Wave Packet Encountaring a Barrier Potential")
+ax.set_title("Gaussian Wave Packet Encountering a Barrier Potential")
 ax.grid(True)
 ax.legend()
 
