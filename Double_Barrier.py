@@ -71,10 +71,8 @@ def update(frame):
     psi *= V_x_half # V/2 operator
     prob_density = np.abs(psi)**2     # Compute prob density
 
-    if t == 1200: # Pause at designated time
+    if t == 350: # Pause at designated time
         ani.event_source.stop()
-    if t == 260:
-        plt.savefig("Figure5e.eps", format='eps')
 
     line_re.set_ydata(np.real(psi))
     line_prob.set_ydata(prob_density)
@@ -86,23 +84,3 @@ ani = animation.FuncAnimation(
     fig, update, frames=steps, init_func=init, interval=1, blit=True)
 
 plt.show()
-
-# --- Compute R and T after simulation ends ---
-
-# Get final probability density
-final_prob_density = np.abs(psi)**2
-
-# Integrate in the left and right regions
-x_barrier_left = -b
-x_barrier_right = b
-
-# Compute masks
-mask_left = x < x_barrier_left
-mask_right = x > x_barrier_right
-
-R = np.sum(final_prob_density[mask_left]) * dx  
-T = np.sum(final_prob_density[mask_right]) * dx
-
-print(f"Reflection coefficient R = {R:.4f}")
-print(f"Transmission coefficient T = {T:.4f}")
-print(f"R + T = {R + T:.4f}")
