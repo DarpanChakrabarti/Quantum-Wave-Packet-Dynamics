@@ -10,7 +10,7 @@ Simulation of a one-dimensional quantum wave packet using the Split-Operator Fou
 | `Step_Potential.py`                       | Step potential (Figure 3(a-f)) |
 | `TransmissionVSenergy.py`                    | Transmission coefficient vs Initial energy (Figure 6) |
 | `R(t)_and_T(t)(Step).py`         | Study the time evolution of R and T for Step potential (Figure D1)|
-| `R(t)_and_T(t)(Barrier).py`| Study the time evolution of R and T for Barrier potential (Figure D2)|
+| `R(t)_and_T(t)(Barrier).py`| Study the time evolution of R and T for Barrier potential (Figure D2 and D3)|
 | `README.md`                              | Project overview and instructions. |
 
 
